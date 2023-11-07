@@ -10,28 +10,30 @@ class Counter extends React.Component {
   }
 
   handleDecrement() {
+    // console.log(this);
+
     this.setState((curState) => {
       return { count: curState.count - 1 };
     });
   }
 
   handleIncrement() {
+    // console.log(this);
+
     this.setState((curState) => {
       return { count: curState.count + 1 };
     });
   }
-
   render() {
-    const date = new Date("june 21 2027");
+    const date = new Date("Feb 04 2024");
     date.setDate(date.getDate() + this.state.count);
-
     return (
       <div>
-        <button onClick={this.handleDecrement}>-</button>
+        <button onClick={this.handleDecrement}> - </button>
         <span>
           {date.toDateString()} [{this.state.count}]
         </span>
-        <button onClick={this.handleIncrement}>+</button>
+        <button onClick={this.handleIncrement}> + </button>
       </div>
     );
   }
